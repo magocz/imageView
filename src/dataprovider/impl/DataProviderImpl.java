@@ -8,10 +8,23 @@ import java.util.List;
 import dataprovider.data.ImageVO;
 
 
+/*
+ * REV: ta klasa powinna implementowac interfejs DataPrivider/DataProvider
+ */
 public class DataProviderImpl{
 
+	/*
+	 * REV: te pola nie powinny byc statyczne
+	 */
 	private static List<ImageVO> listOfImages = new ArrayList<ImageVO>();
+	/*
+	 * REV: co jesli roszerzenie wyglada tak 'jPg'
+	 */
 	private static List<String> imageTypes = new ArrayList<String>(Arrays.asList(new String[] { ".jpg", ".png" }));
+
+	/*
+	 * REV: metody w tej klasie nie powinny byc statyczne
+	 */
 
 	public static List<ImageVO> getImagesFromDirectory(String path) {
 		File folder = new File(path);
@@ -37,6 +50,9 @@ public class DataProviderImpl{
 
 
 	private static boolean isImage(String fileName) {
+		/*
+		 * REV: lepiej uzyc FilenameFilter
+		 */
 		for (String type : imageTypes) {
 			if(fileName.endsWith(type)){
 				return true;

@@ -41,6 +41,7 @@
                </TableView>
             </content>
          </ScrollPane>
+         <!-- REV: tekst powininen byc pobrany z bundle, analogicznie ponizej -->
          <Button fx:id="setDirectoryButton" mnemonicParsing="false" onAction="#setDirectory" prefHeight="31.0" prefWidth="231.0" text="Folder zawierajacy" GridPane.rowIndex="2" />
          <Label alignment="CENTER" prefHeight="21.0" prefWidth="222.0" text="Lista dostepnych obrazow:" />
          <Label fx:id="imageNameLable" alignment="CENTER" contentDisplay="CENTER" prefHeight="21.0" prefWidth="746.0" text="imageName" GridPane.columnIndex="1" />
@@ -60,6 +61,7 @@
       </children>
   </GridPane>
    <Label alignment="CENTER" layoutX="10.0" layoutY="14.0" prefHeight="41.0" prefWidth="1012.0" text="Przegladarka obrazow">
+      <!-- REV: lepiej zdefiniowac czcionke w CSSie -->
       <font>
          <Font name="Dotum" size="32.0" />
       </font></Label>

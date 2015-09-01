@@ -8,6 +8,9 @@ import dataprovider.impl.DataProviderImpl;
 public class DataProviderTestImpl {
 	@Test
 	public void shouldGetTwoImages(){
+		/*
+		 * REV: sciezka jest wzgledna w stosunku do aktualnego katalogu, wiec test nie bedzie dzialal w innym srodowisku, np: Jenkinsie
+		 */
 		// given
 		String path = "../ImageViewer/testResources";
 		DataProviderImpl finder = new DataProviderImpl();

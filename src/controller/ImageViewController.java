@@ -56,6 +56,9 @@ public class ImageViewController {
 	ScrollPane imageScrollPane;
 
 	private final ImageSearchModel model = new ImageSearchModel();
+	/*
+	 * REV: lepiej gdyby ten obiekt byl w modelu (ImageSearchModel)
+	 */
 	private ImageVO bookVO;
 
 	public ImageViewController() {
@@ -84,8 +87,15 @@ public class ImageViewController {
 	private File getDirectory() {
 		DirectoryChooser chooser = new DirectoryChooser();
 		chooser.setTitle("JavaFX Projects");
+		/*
+		 * REV: zadziala na Windowsie, ale na Linuxie juz nie
+		 */
 		File defaultDirectory = new File("C:/Users/Public/Pictures/Sample Pictures");
 		chooser.setInitialDirectory(defaultDirectory);
+		/*
+		 * REV: dialog powinien byc modalny.
+		 * Jako parametr powinienes przekazac 'primaryStage'.
+		 */
 		return chooser.showDialog(null);
 	}
 
@@ -93,6 +103,9 @@ public class ImageViewController {
 		Task<Collection<ImageVO>> backgroundTask = new Task<Collection<ImageVO>>() {
 			@Override
 			protected Collection<ImageVO> call() throws Exception {
+				/*
+				 * REV: uzywaj instacji obiektu DataPrivider/DataProvider zamiast statycznej metody z klasy
+				 */
 				return DataProviderImpl.getImagesFromDirectory(path);
 			}
 		};

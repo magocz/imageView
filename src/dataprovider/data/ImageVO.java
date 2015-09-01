@@ -3,6 +3,10 @@ package dataprovider.data;
 public class ImageVO {
 	private String name;
 	private int id;
+	/*
+	 * REV: prefiks powinien byc zdefiniowany w klasie, w ktorej tworzony jest obiekt Image
+	 * Klasa VO tylko przechowuje dane.
+	 */
 	private String path = "file:///";
 
 	public ImageVO() {
